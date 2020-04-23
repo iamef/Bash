@@ -1,7 +1,7 @@
-#!/bin/bash
-echo In how many minutes should I stand up?
-read time
-sleep $time * 60
+echo "In how many minutes should I stand up? (integer only please)"
+read utime
+#sleep $utime
+sleep $((utime * 60))
 
 while true; do
 	say 'You should stand up'
