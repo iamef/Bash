@@ -1,0 +1,40 @@
+#!/bin/bash
+# from https://unix.stackexchange.com/questions/314834/output-something-in-a-loop-until-a-key-is-pressed
+
+#OP
+while true; do
+    echo -en "Press Q to exit \t\t: "
+    read input
+    if [[ $input = "q" ]] || [[ $input = "Q" ]] 
+        then break 
+    else 
+        echo "Invalid Input."
+    fi
+done
+
+
+#first answer
+# BEGIN=$(date +%s)
+
+# echo Starting Stopwatch...
+# echo Press Q to exit.
+
+# while true; do
+#     NOW=$(date +%s)
+#     let DIFF=$(($NOW - $BEGIN))
+#     let MINS=$(($DIFF / 60))
+#     let SECS=$(($DIFF % 60))
+#     let HOURS=$(($DIFF / 3600))
+#     let DAYS=$(($DIFF / 86400))
+
+#     # \r  is a "carriage return" - returns cursor to start of line
+#     printf "\r%3d Days, %02d:%02d:%02d" $DAYS $HOURS $MINS $SECS
+
+# # In the following line -t for timeout, -N for just 1 character
+#     read -t 0.25 -N 1 input
+#     if [[ $input = "q" ]] || [[ $input = "Q" ]]; then
+# # The following line is for the prompt to appear on a new line.
+#         echo
+#         break 
+#     fi
+# done
